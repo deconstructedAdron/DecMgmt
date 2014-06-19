@@ -6,8 +6,7 @@ var cookieParser = require('cookie-parser');
 var http = require('http');
 var config = require('./config');
 var bodyParser = require('body-parser');
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./routes/routing');
 
 var app = express();
 app.set('port', process.env.PORT || config.get('port'));
@@ -22,8 +21,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+routes.load_routes(app);
 
 // development error handler
 // will print stacktrace
