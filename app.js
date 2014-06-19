@@ -6,21 +6,14 @@ var cookieParser = require('cookie-parser');
 var http = require('http');
 var config = require('./config');
 var bodyParser = require('body-parser');
+var routes = require('./routes/index');
+var users = require('./routes/users');
 
 var app = express();
 app.set('port', process.env.PORT || config.get('port'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.set('name', 'storgie');
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -31,15 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-
-/// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-/// error handlers
 
 // development error handler
 // will print stacktrace
