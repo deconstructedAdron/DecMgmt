@@ -1,9 +1,12 @@
 {
     "name"           : "DecMgmt",
     "version"        : "0.0.1",
-    "private"        : true,
+    "private"        : false,
     "scripts"        : {
-        "start": "node ./bin/www"
+        "start"     : "node app.js",
+        "test"      : "mocha tests",
+        "predeploy" : "echo Deploying!",
+        "postdeploy": "echo Deployed."
     },
     "dependencies"   : {
         "express"       : "~4.4.3",
