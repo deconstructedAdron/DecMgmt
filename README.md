@@ -1,4 +1,4 @@
-
+[ ![Codeship Status for Adron/DecMgmt](https://www.codeship.io/projects/187e44a0-da22-0131-66ef-729651b3c379/status)](https://www.codeship.io/projects/24263)
 
 [![Dependencies](https://david-dm.org/Adron/Storgie.png)](http://david-dm.org/Adron/DecMgmt)
 
