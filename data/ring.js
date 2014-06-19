@@ -10,7 +10,19 @@ var apikeys = 'accounts.apikeys';
 
 var ring = {};
 
-ring.blagh = function () {
+ring.kv_get = function () {
+    return 'kv_get';
+}
+
+ring.kv_set = function () {
+    return 'kv_set';
+}
+
+ring.gr_get = function () {
+
+}
+
+ring.gr_set = function () {
 
 }
 
