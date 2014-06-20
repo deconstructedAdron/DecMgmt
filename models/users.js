@@ -3,12 +3,25 @@
  * Description: Object that will handle user interactions.
  */
 
-
 var users = {};
 
-users.blaghdblagh = function blaghdWoah() {
+users.put = function (user) {
+    return '';
+};
 
+users.list = function (filter) {
+    return '';
+};
+
+users.get = function (criteria) {
+    return '';
+};
+
+users.addToRole = function (role) {
+
+    return '';
 }
+
 
 // sample of what should/needs to match for the api token to work with things...
 // to be deleted and replaced with real codes.

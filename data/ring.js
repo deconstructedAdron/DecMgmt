@@ -19,11 +19,11 @@ ring.kv_set = function () {
 }
 
 ring.gr_get = function () {
-
+    return 'gr_get';
 }
 
 ring.gr_set = function () {
-
+    return 'gr_set';
 }
 
 module.exports = ring;
