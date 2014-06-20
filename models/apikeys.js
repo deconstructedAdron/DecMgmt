@@ -3,6 +3,10 @@
  * Description: Object that will handle API key management.
  */
 
+var apikeys = function apikeys (conn) {
+    this.ConnProperties = conn;
+};
 
-var apikeys = {};
+apikeys.ConnProperties = {};
+
 module.exports = apikeys;
