@@ -5,40 +5,40 @@
  */
 
 // Passport Security
-var passport = require('passport');
-var BasicStrategy = require('passport-http').BasicStrategy;
-var userManagement = require('../models/users');
+var passport = require ('passport');
+var BasicStrategy = require ('passport-http').BasicStrategy;
+var userManagement = require ('../models/users');
 
 // *********************************************************************************************************************
 // Temporary Users - This whole section needs ported out to the database.
 // *********************************************************************************************************************
-var users = userManagement.getUsers();
+var users = userManagement.getUsers ();
 
-function findByUsername(username, fn) {
+function findByUsername (username, fn) {
     for (var i = 0, len = users.length; i < len; i++) {
         var user = users[i];
         if (user.username === username) {
-            return fn(null, user);
+            return fn (null, user);
         }
     }
-    return fn(null, null);
+    return fn (null, null);
 }
 
-passport.use(new BasicStrategy({
+passport.use (new BasicStrategy ({
     },
     function (username, password, done) {
-        process.nextTick(function () {
-            findByUsername(username, function (err, user) {
+        process.nextTick (function () {
+            findByUsername (username, function (err, user) {
                 if (err) {
-                    return done(err);
+                    return done (err);
                 }
                 if (!user) {
-                    return done(null, false);
+                    return done (null, false);
                 }
                 if (user.password != password) {
-                    return done(null, false);
+                    return done (null, false);
                 }
-                return done(null, user);
+                return done (null, user);
             })
         });
     }
@@ -50,23 +50,23 @@ routing.load_routes = function (app) {
     // *********************************************************************************************************************
     // Setup passport security.
     // *********************************************************************************************************************
-    app.use(passport.initialize());
+    app.use (passport.initialize ());
 
     // *********************************************************************************************************************
     // Site Route Mapping
     // *********************************************************************************************************************
-    app.get('/mu-41acf44f-894ab026-ac5e0f6d-75c032d0', function (req, res) {
-        res.send('42');
+    app.get ('/mu-41acf44f-894ab026-ac5e0f6d-75c032d0', function (req, res) {
+        res.send ('42');
     });
 
     // *********************************************************************************************************************
     // Device API Route Mapping
     // *********************************************************************************************************************
     // curl -v -u public:blagh http://localhost:1337/stat
-    app.get('/stat',
-        passport.authenticate('basic', { session: false}),
+    app.get ('/stat',
+        passport.authenticate ('basic', { session: false}),
         function (req, res) {
-            res.send('blagh');
+            res.send ('blagh');
         });
 
     // *********************************************************************************************************************
@@ -74,7 +74,7 @@ routing.load_routes = function (app) {
     // *********************************************************************************************************************
     // curl -v http://localhost:1337
     // localhost:1337
-    app.get('/', function (req, res) {
-        res.render('index', { title: 'Express + ' });
+    app.get ('/', function (req, res) {
+        res.render ('index', { title: 'Express + ' });
     });
 }

@@ -3,7 +3,7 @@
  * Description: Data tier for managing in and out w/ Orchestrate.
  */
 
-var orchestrator = require('orchestrate');
+var orchestrator = require ('orchestrate');
 var collection = 'deconstructed';
 var groups = 'accounts.groups';
 var users = 'accounts.users';
