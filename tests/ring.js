@@ -12,5 +12,4 @@ describe('data ring', function () {
     it('should set key value', function () {
         data_ring.kv_set().should.eql('kv_set');
     })
-
 })

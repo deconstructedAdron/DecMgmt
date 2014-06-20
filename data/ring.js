@@ -1,5 +1,6 @@
 /**
  * Created by adron on 6/19/14.
+ * Description: Data tier for managing in and out w/ Orchestrate.
  */
 
 var orchestrator = require('orchestrate');

@@ -3,21 +3,31 @@
  * Description: Object that will handle user interactions.
  */
 
-var users = {};
+var users = function (ring) {
 
-users.put = function (user) {
+};
+
+users.prototype.put = function (user) {
     return '';
 };
 
-users.list = function (filter) {
+users.prototype.list = function (filter) {
     return '';
 };
 
-users.get = function (criteria) {
+users.prototype.getUser = function (username, password) {
     return '';
 };
 
-users.addToRole = function (role) {
+users.prototype.getUsers = function (criteria) {
+
+}
+
+users.prototype.getByApiKey = function (apikey) {
+
+}
+
+users.prototype.addToRole = function (role) {
 
     return '';
 }
@@ -25,7 +35,7 @@ users.addToRole = function (role) {
 
 // sample of what should/needs to match for the api token to work with things...
 // to be deleted and replaced with real codes.
-users.getUsers = function () {
+users.prototype.getUsers = function () {
     var users_sample_stuffs = [
         { id: 2, username: 'adron', name: 'Adron Hall', password: 'hgalb!', email: 'adron@deconstructed.io'},
         { id: 3, username: 'public', password: 'blagh', email: 'public@deconstructed.io' }
