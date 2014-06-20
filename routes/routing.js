@@ -7,7 +7,7 @@
 // Passport Security
 var passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
-var userManagement = require('../data/users');
+var userManagement = require('../models/users');
 
 // *********************************************************************************************************************
 // Temporary Users - This whole section needs ported out to the database.
