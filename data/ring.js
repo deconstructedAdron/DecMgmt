@@ -3,7 +3,7 @@
  * Description: Data tier for managing in and out w/ Orchestrate.
  */
 
-var orchestrator = require ('orchestrate');
+var orchestrate = require ('orchestrate') (process.env.ORCHESTRATE_API_KEY);
 var collection = 'deconstructed';
 var groups = 'accounts.groups';
 var users = 'accounts.users';
@@ -11,19 +11,23 @@ var apikeys = 'accounts.apikeys';
 
 var ring = {};
 
-ring.kv_get = function () {
+ring.search = function (collection, query) {
+    return 'search';
+}
+
+ring.kv_get = function (collection, key) {
     return 'kv_get';
 }
 
-ring.kv_set = function () {
+ring.kv_set = function (collection, key, value) {
     return 'kv_set';
 }
 
-ring.gr_get = function () {
+ring.gr_get = function (collection, key, relation) {
     return 'gr_get';
 }
 
-ring.gr_set = function () {
+ring.gr_set = function (collection, key, relation, toCollection, toKey) {
     return 'gr_set';
 }
 
