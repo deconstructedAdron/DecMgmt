@@ -1,12 +1,12 @@
 /**
- * Created by adron on 6/19/14.
- * Description: Object that will handle API key management.
+ * Created by adronhall on 6/20/14.
+ * Description: apikey management.
  */
 
-var apikeys = function apikeys (conn) {
-    this.ConnProperties = conn;
+var apikeys = function apikeys (ring) {
+    this.ConnectionRing = ring;
 };
 
-apikeys.ConnProperties = {};
+apikeys.ConnectionRing = {};
 
 module.exports = apikeys;
