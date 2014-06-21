@@ -11,23 +11,23 @@ var apikeys = 'accounts.apikeys';
 
 var ring = {};
 
-ring.search = function (query) {
+ring.search = function (collection, query) {
     return 'search';
 }
 
-ring.kv_get = function (key) {
+ring.kv_get = function (collection, key) {
     return 'kv_get';
 }
 
-ring.kv_set = function (key, value) {
+ring.kv_set = function (collection, key, value) {
     return 'kv_set';
 }
 
-ring.gr_get = function (key, relation) {
+ring.gr_get = function (collection, key, relation) {
     return 'gr_get';
 }
 
-ring.gr_set = function (key, relation, toCollection, toKey) {
+ring.gr_set = function (collection, key, relation, toCollection, toKey) {
     return 'gr_set';
 }
 
