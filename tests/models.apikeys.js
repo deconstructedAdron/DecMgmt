@@ -14,6 +14,6 @@ describe ('The API keys', function () {
     });
     it ('should have a connection that is the same as the passed connection.', function () {
         var apikeys = new data_ring (FAKE_RING);
-        apikeys.ConnProperties.should.eql (FAKE_RING);
+        apikeys.ConnectionRing.should.eql (FAKE_RING);
     });
 })
