@@ -10,23 +10,23 @@ var apikeys = 'accounts.apikeys';
 
 var FAKE_RING = {};
 
-FAKE_RING.search = function (query) {
+FAKE_RING.search = function (collection, query) {
     return 'search';
 }
 
-FAKE_RING.kv_get = function (key) {
+FAKE_RING.kv_get = function (collection, key) {
     return 'kv_get';
 }
 
-FAKE_RING.kv_set = function (key, value) {
+FAKE_RING.kv_set = function (collection, key, value) {
     return 'kv_set';
 }
 
-FAKE_RING.gr_get = function (key, relation) {
+FAKE_RING.gr_get = function (collection, key, relation) {
     return 'gr_get';
 }
 
-FAKE_RING.gr_set = function (key, relation, toCollection, toKey) {
+FAKE_RING.gr_set = function (collection, key, relation, toCollection, toKey) {
     return 'gr_set';
 }
 
