@@ -7,12 +7,13 @@
 // Passport Security
 var passport = require ('passport');
 var BasicStrategy = require ('passport-http').BasicStrategy;
-var userManagement = require ('../models/users');
+var UserManagement = require ('../models/users');
+var data_ring = require('../data/ring');
 
 // *********************************************************************************************************************
 // Temporary Users - This whole section needs ported out to the database.
 // *********************************************************************************************************************
-var users = userManagement.getUsers ();
+var users = new UserManagement(data_ring).getUsers();
 
 function findByUsername (username, fn) {
     for (var i = 0, len = users.length; i < len; i++) {
@@ -66,7 +67,7 @@ routing.load_routes = function (app) {
     app.get ('/stat',
         passport.authenticate ('basic', { session: false}),
         function (req, res) {
-            res.send ('blagh');
+            res.send({status: 'live'});
         });
 
     // *********************************************************************************************************************
@@ -75,6 +76,6 @@ routing.load_routes = function (app) {
     // curl -v http://localhost:1337
     // localhost:1337
     app.get ('/', function (req, res) {
-        res.render ('index', { title: 'Express + ' });
+        res.render ('index', { title: 'Management Interface Will Go Here!!!  WOOP' });
     });
 }
