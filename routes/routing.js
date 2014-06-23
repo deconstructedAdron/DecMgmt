@@ -5,15 +5,16 @@
  */
 
 // Passport Security
+var data_ring = require ('../data/ring');
+var UserManagement = require ('../models/users');
+var users = new UserManagement (data_ring).getUsers ();
+
 var passport = require ('passport');
 var BasicStrategy = require ('passport-http').BasicStrategy;
-var UserManagement = require ('../models/users');
-var data_ring = require('../data/ring');
 
 // *********************************************************************************************************************
 // Temporary Users - This whole section needs ported out to the database.
 // *********************************************************************************************************************
-var users = new UserManagement(data_ring).getUsers();
 
 function findByUsername (username, fn) {
     for (var i = 0, len = users.length; i < len; i++) {
@@ -78,4 +79,48 @@ routing.load_routes = function (app) {
     app.get ('/', function (req, res) {
         res.render ('index', { title: 'Management Interface Will Go Here!!!  WOOP' });
     });
+
+    // *********************************************************************************************************************
+    // Users Route Mapping (groups of users)
+    // *********************************************************************************************************************
+    // curl -v http://localhost:1337/users
+    // localhost:1337
+    var base_path = '/users';
+
+    app.get (base_path,
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    app.post (base_path + '/search',
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    // *********************************************************************************************************************
+    // User Route Mapping (individual)
+    // *********************************************************************************************************************
+    // curl -v http://localhost:1337/users
+    // localhost:1337
+    var base_path = '/user';
+
+    app.post (base_path,
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    app.post (base_path + '/put',
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    app.post (base_path + '/',
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
 }

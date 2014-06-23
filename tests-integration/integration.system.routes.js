@@ -5,14 +5,15 @@
  *   made against the actual API.
  * HTTP Status codes: Located @ http://en.wikipedia.org/wiki/List_of_HTTP_status_codes
  * Superagent Info: Located @ http://visionmedia.github.io/superagent/docs/test.html
+ * Great Blog Entry & Series: Located @ http://www.marcusoft.net/2014/02/mnb-supertest.html
+ * Supertest: Located @ https://github.com/visionmedia/supertest
  */
-
 
 var should = require ('chai').should ();
 var supertest = require ('supertest');
 var routes = supertest ('http://localhost:1337');
-
-var testuser = {username: 'public', password: 'blagh'};
+var test_user = require ('../tests-integration/integration-globals');
+var username = test_user.username, password = test_user.password;
 
 describe ('API Calls', function () {
 
@@ -31,7 +32,7 @@ describe ('API Calls', function () {
 
         it ('should auth and 200 authorized', function (done) {
             routes.get ('/stat')
-                .auth ('public', 'blagh')
+                .auth (username, password)
                 .expect (200, done)
         })
     })
