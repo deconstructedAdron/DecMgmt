@@ -4,10 +4,8 @@
  */
 
 var should = require ('chai').should ();
-var supertest = require ('supertest');
-var routes = supertest ('http://localhost:1337');
-var test_user = require ('../tests-integration/integration-globals');
-var username = test_user.username, password = test_user.password;
+var test_globals = require ('../tests-integration/integration-globals');
+var username = test_user.username, password = test_user.password, routes = test_globals.routes;
 
 describe ('API Calls', function () {
     describe ('to users API function end points', function () {

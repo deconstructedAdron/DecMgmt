@@ -102,7 +102,7 @@ routing.load_routes = function (app) {
     // *********************************************************************************************************************
     // User Route Mapping (individual)
     // *********************************************************************************************************************
-    // curl -v http://localhost:1337/users
+    // curl -v http://localhost:1337/user
     // localhost:1337
     var base_path = '/user';
 
@@ -118,7 +118,33 @@ routing.load_routes = function (app) {
             res.send ({status: 'tbd'});
         });
 
-    app.post (base_path + '/',
+    app.post (base_path + '/get',
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+
+    // *********************************************************************************************************************
+    // API Key Route Mapping
+    // *********************************************************************************************************************
+    // curl -v http://localhost:1337/user
+    // localhost:1337
+    var base_path = '/apikeys';
+
+    app.post (base_path,
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    app.post (base_path + '/add',
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    app.post (base_path + '/delete',
         passport.authenticate ('basic', { session: false}),
         function (req, res) {
             res.send ({status: 'tbd'});
