@@ -4,8 +4,10 @@
  */
 
 var users = function (ring) {
-
+    this.ConnectionRing = ring;
 };
+
+users.ConnectionRing = {};
 
 users.prototype.put = function (user) {
     return '';
@@ -23,8 +25,8 @@ users.prototype.getUsers = function (criteria) {
 
 }
 
-users.prototype.getByApiKey = function (apikey) {
-
+users.prototype.getApiKeys = function () {
+    return 'listofapikeys';
 }
 
 users.prototype.addToRole = function (role) {
@@ -32,6 +34,13 @@ users.prototype.addToRole = function (role) {
     return '';
 }
 
+users.prototype.authByUserPassword = function () {
+    return 'authbyuserpassword';
+}
+
+users.prototype.authByApiKey = function () {
+    return 'authbyapikey';
+}
 
 // sample of what should/needs to match for the api token to work with things...
 // to be deleted and replaced with real codes.

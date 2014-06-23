@@ -4,6 +4,7 @@
  */
 
 var data_ring = require ('../data/ring');
+var should = require ('should');
 
 describe ('data ring', function () {
     it ('should get key value', function () {
@@ -13,3 +14,5 @@ describe ('data ring', function () {
         data_ring.kv_set ().should.eql ('kv_set');
     })
 })
+
+

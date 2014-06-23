@@ -3,6 +3,11 @@
  * Description: Object that will handle group management.
  */
 
+var groups = function groups(ring) {
+    this.ConnectionRing = ring;
+};
 
-var groups = {};
+groups.ConnectionRing = {};
+
 module.exports = groups;
+
