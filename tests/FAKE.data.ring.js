@@ -3,10 +3,10 @@
  * Description: Fake ring for testing.
  */
 
-var collection = 'deconstructed';
 var groups = 'accounts.groups';
 var users = 'accounts.users';
 var apikeys = 'accounts.apikeys';
+var roles = 'accounts.roles';
 
 var FAKE_RING = {};
 
@@ -15,10 +15,15 @@ FAKE_RING.search = function (collection, query) {
 }
 
 FAKE_RING.kv_get = function (collection, key) {
-    return 'kv_get';
+    if (collection === users)
+
+
+
+        return 'kv_get';
 }
 
 FAKE_RING.kv_set = function (collection, key, value) {
+
     return 'kv_set';
 }
 
