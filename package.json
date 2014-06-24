@@ -24,9 +24,10 @@
         "static-favicon": "~1.0.0"
     },
     "devDependencies": {
-        "mocha" : "~1.18.2",
-        "should": "~3.3.1",
-        "vcr"   : "0.0.4"
+        "chai"     : "^1.9.1",
+        "mocha"    : "~1.18.2",
+        "should"   : "~3.3.1",
+        "supertest": "^0.13.0"
     },
     "repository"     : {
         "type": "git",

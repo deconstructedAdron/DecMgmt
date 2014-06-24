@@ -5,14 +5,16 @@
  */
 
 // Passport Security
+var data_ring = require ('../data/ring');
+var UserManagement = require ('../models/users');
+var users = new UserManagement (data_ring).getUsers ();
+
 var passport = require ('passport');
 var BasicStrategy = require ('passport-http').BasicStrategy;
-var userManagement = require ('../models/users');
 
 // *********************************************************************************************************************
 // Temporary Users - This whole section needs ported out to the database.
 // *********************************************************************************************************************
-var users = userManagement.getUsers ();
 
 function findByUsername (username, fn) {
     for (var i = 0, len = users.length; i < len; i++) {
@@ -66,7 +68,7 @@ routing.load_routes = function (app) {
     app.get ('/stat',
         passport.authenticate ('basic', { session: false}),
         function (req, res) {
-            res.send ('blagh');
+            res.send({status: 'live'});
         });
 
     // *********************************************************************************************************************
@@ -75,6 +77,76 @@ routing.load_routes = function (app) {
     // curl -v http://localhost:1337
     // localhost:1337
     app.get ('/', function (req, res) {
-        res.render ('index', { title: 'Express + ' });
+        res.render ('index', { title: 'Management Interface Will Go Here!!!  WOOP' });
     });
+
+    // *********************************************************************************************************************
+    // Users Route Mapping (groups of users)
+    // *********************************************************************************************************************
+    // curl -v http://localhost:1337/users
+    // localhost:1337
+    var base_path = '/users';
+
+    app.get (base_path,
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    app.post (base_path + '/search',
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    // *********************************************************************************************************************
+    // User Route Mapping (individual)
+    // *********************************************************************************************************************
+    // curl -v http://localhost:1337/user
+    // localhost:1337
+    var base_path = '/user';
+
+    app.post (base_path,
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    app.post (base_path + '/put',
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    app.post (base_path + '/get',
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+
+    // *********************************************************************************************************************
+    // API Key Route Mapping
+    // *********************************************************************************************************************
+    // curl -v http://localhost:1337/user
+    // localhost:1337
+    var base_path = '/apikeys';
+
+    app.post (base_path,
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    app.post (base_path + '/add',
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
+
+    app.post (base_path + '/delete',
+        passport.authenticate ('basic', { session: false}),
+        function (req, res) {
+            res.send ({status: 'tbd'});
+        });
 }
