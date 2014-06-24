@@ -9,4 +9,8 @@ var apikeys = function apikeys (ring) {
 
 apikeys.ConnectionRing = {};
 
+apikeys.prototype.getUser = function(username, password){
+    
+}
+
 module.exports = apikeys;
