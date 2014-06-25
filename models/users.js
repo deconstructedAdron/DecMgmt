@@ -45,10 +45,14 @@ users.prototype.authByApiKey = function () {
 // sample of what should/needs to match for the api token to work with things...
 // to be deleted and replaced with real codes.
 users.prototype.getUsers = function () {
-    var users_sample_stuffs = [
-        { id: 2, username: 'adron', name: 'Adron Hall', password: 'hgalb!', email: 'adron@deconstructed.io'},
-        { id: 3, username: 'public', password: 'blagh', email: 'public@deconstructed.io' }
+    var god_users = [
+        {   id: 0,
+            username: 'allfather',
+            name: 'Odin',
+            password: 'blagh',
+            email: 'odin@deconstructed.io',
+            apikey: 'JkF]]bmn)y1DoVApEvXGPPmz*_F4`b' }
     ];
-    return users_sample_stuffs;
+    return god_users;
 }
 module.exports = users;
