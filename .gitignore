@@ -26,4 +26,5 @@ node_modules
 
 .idea
 .elasticbeanstalk
+.elasticbeanstalk/
 .DS_Store
