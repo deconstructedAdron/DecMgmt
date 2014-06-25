@@ -3,18 +3,14 @@
  *Description: basic tests for the roles DTO/Business Logic.
  */
 
-var Roles = require('../models/apikeys');
+var Roles = require('../models/roles');
 var FAKE_RING = require('../tests/FAKE.data.ring');
 var should = require('should');
 
-describe('The groups', function () {
-    it('should exist when instantiated with a ring connection.', function () {
-        var roles = new Roles(FAKE_RING);
-        roles.should.exist;
-    });
-    it('should have a connection that is the same as the passed connection.', function () {
-        var roles = new Roles(FAKE_RING);
-        roles.ConnectionRing.should.eql(FAKE_RING);
+describe('The roles', function () {
+    it('should have 5 different roles.', function () {
+        var roles = Roles.List;
+        roles.length.should.eql(5);
     });
 })
 

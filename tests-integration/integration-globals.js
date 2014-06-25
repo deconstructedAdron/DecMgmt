@@ -3,12 +3,12 @@
  * Description: Global Variables for integration tests.
  */
 
-var supertest = require ('supertest');
+var supertest = require('supertest');
 
 test_globals = {
-    username: 'public',
+    username: 'allfather',
     password: 'blagh',
-    routes  : supertest ('http://localhost:1337')
+    routes: supertest('http://localhost:1337')
 };
 
 module.exports = test_globals;
