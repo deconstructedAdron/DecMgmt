@@ -31,10 +31,10 @@
         "should": "~4.0.4",
         "supertest": "^0.13.0",
         "coveralls.io": "~2.1.0",
-        "mocha-lcov-reporter": "0.0.1",
-        "blanket": "~1.1.6",
         "istanbul": "~0.2.11",
-        "mocha-istanbul": "~0.2.0"
+        "mocha-istanbul": "~0.2.0",
+        "karma": "~0.10",
+        "karma-coverage": "~0.1"
     },
     "repository": {
         "type": "git",
