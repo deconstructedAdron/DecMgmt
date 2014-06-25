@@ -9,5 +9,13 @@ var groups = function groups(ring) {
 
 groups.ConnectionRing = {};
 
+groups.prototype.add = function (group, username, password) {
+
+}
+
+groups.prototype.remove = function (group, username, password) {
+
+}
+
 module.exports = groups;
 

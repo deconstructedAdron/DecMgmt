@@ -9,4 +9,12 @@ var roles = function roles(ring) {
 
 roles.ConnectionRing = {};
 
+roles.prototype.add = function (username) {
+
+}
+
+roles.prototype.remove = function (role, username, password) {
+    var role =
+}
+
 module.exports = roles;

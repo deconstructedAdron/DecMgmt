@@ -9,29 +9,29 @@
  * Supertest: Located @ https://github.com/visionmedia/supertest
  */
 
-var should = require ('chai').should ();
-var test_globals = require ('../tests-integration/integration-globals');
-var username = test_user.username, password = test_user.password, routes = test_globals.routes;
+var should = require('chai').should();
+var test_globals = require('../tests-integration/integration-globals');
+var username = test_globals.username, password = test_globals.password, routes = test_globals.routes;
 
-describe ('API Calls', function () {
+describe('API Calls', function () {
 
-    describe ('to Blitz.io URI', function () {
-        it ('should return a 200 success.', function (done) {
-            routes.get ('/mu-41acf44f-894ab026-ac5e0f6d-75c032d0')
-                .expect (200, done)
+    describe('to Blitz.io URI', function () {
+        it('should return a 200 success.', function (done) {
+            routes.get('/mu-41acf44f-894ab026-ac5e0f6d-75c032d0')
+                .expect(200, done)
         });
     })
 
-    describe ('to stat URI', function () {
-        it ('should return 401 unauthorized', function (done) {
-            routes.get ('/stat')
-                .expect (401, done)
+    describe('to stat URI', function () {
+        it('should return 401 unauthorized', function (done) {
+            routes.get('/stat')
+                .expect(401, done)
         })
 
-        it ('should auth and 200 authorized', function (done) {
-            routes.get ('/stat')
-                .auth (username, password)
-                .expect (200, done)
+        it('should auth and 200 authorized', function (done) {
+            routes.get('/stat')
+                .auth(username, password)
+                .expect(200, done)
         })
     })
 });
