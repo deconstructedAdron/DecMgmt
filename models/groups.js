@@ -17,5 +17,13 @@ groups.prototype.remove = function (group, username, password) {
 
 }
 
+groups.prototype.get = function (group) {
+
+}
+
+groups.prototype.list = function (user) {
+
+}
+
 module.exports = groups;
 

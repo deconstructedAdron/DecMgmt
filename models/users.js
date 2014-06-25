@@ -55,4 +55,5 @@ users.prototype.getUsers = function () {
     ];
     return god_users;
 }
+
 module.exports = users;
