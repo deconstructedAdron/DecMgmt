@@ -5,6 +5,8 @@
     "scripts": {
         "start": "node app.js",
         "test": "mocha tests",
+        "coverage": "`npm bin`/istanbul cover ./test/runner.js",
+        "coveralls": "npm run-script coverage && node bin/coveralls.js < coverage/lcov.info",
         "predeploy": "echo Deploying!",
         "postdeploy": "echo Deployed."
     },
@@ -27,7 +29,12 @@
         "chai": "^1.9.1",
         "mocha": "~1.20.1",
         "should": "~4.0.4",
-        "supertest": "^0.13.0"
+        "supertest": "^0.13.0",
+        "coveralls.io": "~2.1.0",
+        "mocha-lcov-reporter": "0.0.1",
+        "blanket": "~1.1.6",
+        "istanbul": "~0.2.11",
+        "mocha-istanbul": "~0.2.0"
     },
     "repository": {
         "type": "git",
