@@ -3,10 +3,46 @@
  * Description: Management of roles.
  */
 
-var roles = function roles(ring) {
-    this.ConnectionRing = ring;
-}
+var alfadir = {
+    name: 'alfadir',
+    read: 'true',
+    write: 'true',
+    delete: 'true'
+};
+var readwritedelete = {
+    name: 'readwritedelete',
+    read: 'true',
+    write: 'true',
+    delete: 'true'
+};
+var readonly = {
+    name: 'readonly',
+    read: 'true',
+    write: 'false',
+    delete: 'false'
+};
+var writeonly = {
+    name: 'writeonly',
+    read: 'false',
+    write: 'true',
+    delete: 'false'
+};
+var readwriteonly = {
+    name: 'readwriteonly',
+    read: 'true',
+    write: 'true',
+    delete: 'true'
+};
 
-roles.ConnectionRing = {};
+var roles = {
+    List: [
+        alfadir,
+        readwritedelete,
+        readonly,
+        writeonly,
+        readwriteonly
+    ]
+};
+
 
 module.exports = roles;
