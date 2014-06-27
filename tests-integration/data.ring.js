@@ -1,6 +1,10 @@
 /**
  * Created by adron on 6/19/14.
  * Description: Basic integration tests for ring calls to Orchestrate.
+ * Instructions:
+ *      1. Execute w/ the ORCHESTRATE_API_KEY environment variable assigned to an appropriate key.
+ *          Sample ORCHESTRATE_API_KEY=test_key node app.js
+ *      2. Execute the integration tests.
  */
 
 var data_ring = require('../data/ring');
@@ -23,13 +27,12 @@ describe('data ring', function () {
 
     it('should set a value', function (done) {
         data_ring.kv_set(collection, key, value)
-            .then(function (result) {
-                result.should.eql('cheese');
-                done();
-            })
-            .fail(function (err) {
-                err.should.eql('failure');
-                done();
+            .then (function () {
+                data_ring.kv_get (collection, key)
+                    .then (function (result) {
+                        result.body.like.should.eql (8);
+                        done ();
+                    })
             })
     })
 })

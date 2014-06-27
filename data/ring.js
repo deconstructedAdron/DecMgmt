@@ -14,6 +14,8 @@ var apikeys = 'accounts.apikeys';
 var ring = {};
 
 ring.search = function (collection, query) {
+
+
     return 'search';
 }
 
@@ -31,6 +33,10 @@ ring.gr_get = function (collection, key, relation) {
 
 ring.gr_set = function (collection, key, relation, toCollection, toKey) {
     return 'gr_set';
+}
+
+ring.kill_collection = function (collection) {
+    db.deleteCollection (collection);
 }
 
 module.exports = ring;
