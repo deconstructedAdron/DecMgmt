@@ -3,7 +3,9 @@
  * Description: Data tier for managing in and out w/ Orchestrate.
  */
 
-var orchestrate = require ('orchestrate') (process.env.ORCHESTRATE_API_KEY);
+var api_key = process.env.ORCHESTRATE_API_KEY;
+
+var db = require('orchestrate')(api_key);
 var collection = 'deconstructed';
 var groups = 'accounts.groups';
 var users = 'accounts.users';
@@ -16,11 +18,11 @@ ring.search = function (collection, query) {
 }
 
 ring.kv_get = function (collection, key) {
-    return 'kv_get';
+    return db.get(collection, key);
 }
 
 ring.kv_set = function (collection, key, value) {
-    return 'kv_set';
+    return db.put(collection, key, value);
 }
 
 ring.gr_get = function (collection, key, relation) {

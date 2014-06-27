@@ -16,4 +16,6 @@ describe('The API keys', function () {
         var apikeys = new ApiKeys(FAKE_RING);
         apikeys.ConnectionRing.should.eql(FAKE_RING);
     });
+
+
 })
