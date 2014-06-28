@@ -13,8 +13,6 @@ var should = require('should');
 var collection = 'test_collection';
 var key = 'test_data';
 var value = {
-    some: 'test data',
-    that: 'exists here',
     like: 8
 };
 
@@ -34,5 +32,13 @@ describe('data ring', function () {
                         done ();
                     })
             })
+    })
+
+    it ('should get a value', function (done) {
+        data_ring.kv_get (collection, key)
+            .then (function (result) {
+            result.body.like.should.eql (8);
+            done ();
+        })
     })
 })
