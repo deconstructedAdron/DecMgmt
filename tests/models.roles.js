@@ -4,8 +4,6 @@
  */
 
 var Roles = require('../models/roles');
-var FAKE_RING = require('../tests/FAKE.data.ring');
-var should = require('should');
 
 describe('The business logic roles', function () {
     it('should have 5 different roles.', function () {

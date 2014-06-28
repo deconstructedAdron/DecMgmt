@@ -5,7 +5,6 @@
 
 var ApiKeys = require('../models/apikeys');
 var FAKE_RING = require('../tests/FAKE.data.ring');
-var should = require('should');
 
 describe('The business logic for API keys', function () {
     it('should exist when instantiated with a ring connection.', function () {

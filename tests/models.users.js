@@ -4,8 +4,6 @@
  */
 var Users = require('../models/users');
 var FAKE_RING = require('../tests/FAKE.data.ring');
-var should = require('should');
-
 var users = new Users(FAKE_RING);
 
 describe('The business logic for users', function () {

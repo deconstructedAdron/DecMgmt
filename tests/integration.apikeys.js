@@ -3,7 +3,7 @@
  * Description: API Integration test for apikeys. Currently does not implement passport security.
  */
 
-var test_globals = require('../tests-integration/integration-globals');
+var test_globals = require('../tests/test-globals');
 var username = test_globals.username, password = test_globals.password, routes = test_globals.routes;
 var base_uri = '/apikeys';
 

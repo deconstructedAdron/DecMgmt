@@ -7,9 +7,7 @@
  *      2. Execute the integration tests.
  */
 
-var data_ring = require('../../data/ring');
-var should = require('should');
-
+var data_ring = require('../data/ring');
 var collection = 'test_collection';
 var key = 'test_data';
 var value = {
@@ -26,19 +24,19 @@ describe('data ring', function () {
     it('should set a value', function (done) {
         data_ring.kv_set(collection, key, value)
             .then(function () {
-            data_ring.kv_get(collection, key)
-                .then(function (result) {
-                result.body.like.should.eql(8);
-                done();
+                data_ring.kv_get(collection, key)
+                    .then(function (result) {
+                        result.body.like.should.eql(8);
+                        done();
+                    })
             })
-        })
     })
 
     it('should get a value', function (done) {
         data_ring.kv_get(collection, key)
             .then(function (result) {
-            result.body.like.should.eql(8);
-            done();
-        })
+                result.body.like.should.eql(8);
+                done();
+            })
     })
 })

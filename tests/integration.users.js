@@ -4,7 +4,7 @@
  */
 
 var should = require('should');
-var test_globals = require('../tests-integration/integration-globals');
+var test_globals = require('../tests/test-globals');
 var username = test_globals.username, password = test_globals.password, routes = test_globals.routes;
 
 describe('API Calls for users', function () {
