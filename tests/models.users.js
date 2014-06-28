@@ -8,7 +8,7 @@ var should = require('should');
 
 var users = new Users(FAKE_RING);
 
-describe('The users', function () {
+describe('The business logic for users', function () {
     it('should exist when instantiated with a ring connection.', function () {
         users.should.exist;
     });
