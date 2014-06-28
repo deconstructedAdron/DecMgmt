@@ -17,7 +17,7 @@ FAKE_RING.search = function (collection, query) {
 FAKE_RING.kv_get = function (collection, key) {
     if (collection === users)
 
-        return 'kv_get';
+    return 'kv_get';
 }
 
 FAKE_RING.kv_set = function (collection, key, value) {
