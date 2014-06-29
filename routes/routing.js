@@ -77,7 +77,11 @@ routing.load_routes = function (app) {
     // curl -v http://localhost:1337
     // localhost:1337
     app.get ('/', function (req, res) {
-        res.render ('index', { title: 'Management Interface Will Go Here!!!  WOOP' });
+        res.render ('index', {
+            title: 'Management Interface Will Go Here!!!  WOOP',
+            orchestrate: process.env.ORCHESTRATE_API_KEY,
+            system_uri: process.env.SYSTEM_URI
+        });
     });
 
     // *********************************************************************************************************************

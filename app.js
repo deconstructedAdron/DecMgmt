@@ -49,6 +49,7 @@ http.createServer(app).listen(app.get('port'), function () {
     console.log(app.get('name') + ' server listening on port ' + app.get('port'));
 
     console.log(process.env.ORCHESTRATE_API_KEY);
+    console.log(process.env.SYSTEM_URI);
 });
 
 module.exports = app;
