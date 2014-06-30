@@ -2,7 +2,6 @@
 
 [![Dependencies](https://david-dm.org/Adron/Storgie.png)](http://david-dm.org/Adron/DecMgmt)
 [![Code Climate](https://codeclimate.com/github/Adron/DecMgmt.png)](https://codeclimate.com/github/Adron/DecMgmt)
-[![Coverage Status](https://coveralls.io/repos/Adron/DecMgmt/badge.png)](https://coveralls.io/r/Adron/DecMgmt)
 
 # DecMgmt
 
