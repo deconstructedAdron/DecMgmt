@@ -1,6 +1,6 @@
 /**
  * Created by adronhall on 6/20/14.
- * Description:
+ * Description: Basic unit tests for the users model.
  */
 var Users = require('../../models/users');
 var data_ring = require('../../data/ring');
@@ -13,22 +13,4 @@ describe('The business logic for users', function () {
     it('should have a connection that is the same as the passed connection.', function () {
         users.ConnectionRing.should.eql(data_ring);
     });
-})
-
-describe('The users to authenticate', function () {
-    // { id: 2, username: 'adron', name: 'Adron Hall', password: 'hgalb!', email: 'adron@deconstructed.io'},
-
-//    it('should return a user record to auth with a username, password and appropriate properties.', function () {
-//        users.authByUserPassword().id.should.exist;
-//
-//    })
-})
-
-describe('The users to verify API key', function () {
-    // { id: 2, username: 'adron', name: 'Adron Hall', password: 'hgalb!', email: 'adron@deconstructed.io'},
-
-//    it('should return a user API key list similar to that above.', function () {
-//        users.authByUserPassword().id.should.exist;
-//
-//    })
-})
+});
