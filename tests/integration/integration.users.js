@@ -7,18 +7,26 @@ var should = require('should');
 var test_globals = require('../test-globals');
 var username = test_globals.username, password = test_globals.password, routes = test_globals.routes;
 
+var Users = require('../../models/users');
+var data_ring = require('../../data/ring');
+
+var users = new Users(data_ring);
+var base_uri = '/users';
+
 describe('API Calls for users', function () {
     describe('to users API function end points', function () {
-        it('should return a 200 success.', function (done) {
-            routes.get('/users')
+        it('should return a 200 success calling /users', function (done) {
+            routes.get(base_uri)
                 .auth(username, password)
                 .expect(200, done)
         });
 
-        it('should return a 200 success.', function (done) {
-            routes.post('/users/search')
+        it('should return a 200 success calling /users/search', function (done) {
+            routes.post(base_uri + '/search')
                 .auth(username, password)
                 .expect(200, done)
         });
+
+
     })
 });

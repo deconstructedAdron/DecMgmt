@@ -11,4 +11,3 @@ describe('The business logic roles', function () {
         roles.length.should.eql(5);
     });
 })
-

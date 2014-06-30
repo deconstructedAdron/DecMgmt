@@ -3,13 +3,26 @@
  * Description: Object that will handle user interactions.
  */
 
+var Chance = require('chance');
+var chance = new Chance();
+
 var users = function (ring) {
     this.ConnectionRing = ring;
 };
 
 users.ConnectionRing = {};
 
-users.prototype.put = function (user) {
+users.prototype.add = function (username, password, name, email) {
+    var user = {
+        username: username,
+        password: password,
+        name: name,
+        email: email,
+        apikey: chance.guid()
+    };
+
+    this.ring.search();
+
     return '';
 };
 
@@ -17,7 +30,7 @@ users.prototype.list = function (filter) {
     return '';
 };
 
-users.prototype.getUser = function (username, password) {
+users.prototype.get = function (username, password) {
     return '';
 };
 
