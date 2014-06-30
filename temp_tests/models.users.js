@@ -3,7 +3,7 @@
  * Description:
  */
 var Users = require('../models/users');
-var FAKE_RING = require('../tests/FAKE.data.ring');
+var FAKE_RING = require('FAKE.data.ring.js');
 var users = new Users(FAKE_RING);
 
 describe('The business logic for users', function () {

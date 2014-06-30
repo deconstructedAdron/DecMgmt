@@ -8,7 +8,7 @@ var supertest = require('supertest');
 test_globals = {
     username: 'allfather',
     password: 'blagh',
-    routes: supertest('http://localhost:1337')
+    routes: supertest('http://' + process.env.SYSTEM_URI)
 };
 
 module.exports = test_globals;

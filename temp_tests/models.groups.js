@@ -4,7 +4,7 @@
  */
 
 var Groups = require('../models/apikeys');
-var FAKE_RING = require('../tests/FAKE.data.ring');
+var FAKE_RING = require('FAKE.data.ring.js');
 
 describe('The business logic for groups', function () {
     it('should exist when instantiated with a ring connection.', function () {
