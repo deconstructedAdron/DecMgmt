@@ -5,6 +5,8 @@
 
 var Chance = require('chance');
 var chance = new Chance();
+var apikeys = require('../models/apikeys');
+var roles = require('../models/roles');
 
 var users = function (ring) {
     this.ConnectionRing = ring;
@@ -17,9 +19,10 @@ users.prototype.add = function (username, password, name, email) {
         username: username,
         password: password,
         name: name,
-        email: email,
-        apikey: chance.guid()
+        email: email
     };
+
+    var apikey = apikeys()
 
     this.ring.search();
 
@@ -66,6 +69,8 @@ users.prototype.getUsers = function () {
             email: 'odin@deconstructed.io',
             apikey: 'JkF]]bmn)y1DoVApEvXGPPmz*_F4`b' }
     ];
+
+
     return god_users;
 }
 

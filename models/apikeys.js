@@ -29,4 +29,16 @@ apikeys.prototype.add = function (username, password) {
     return this.ConnectionRing.kv_set(collection, key, value);
 }
 
+apikeys.prototype.generate = function (email) {
+    if (email.length > 3) {
+        var apikey = {
+            apikey: chance.guid(),
+            email: email
+        }
+        return apikey;
+    } else {
+        throw Error('Must have a valid email when generating an API key.');
+    }
+}
+
 module.exports = apikeys;
