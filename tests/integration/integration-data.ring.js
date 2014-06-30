@@ -7,7 +7,7 @@
  *      2. Execute the integration tests.
  */
 
-var data_ring = require('../data/ring');
+var data_ring = require('../../data/ring');
 var collection = 'test_collection';
 var key = 'test_data';
 var value = {
@@ -15,7 +15,6 @@ var value = {
 };
 
 describe('data ring', function () {
-
     it('orchestrate api key should be available', function () {
         var key = process.env.ORCHESTRATE_API_KEY;
         key.should.exist;
