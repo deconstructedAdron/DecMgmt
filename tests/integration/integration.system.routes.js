@@ -9,7 +9,7 @@
  * Supertest: Located @ https://github.com/visionmedia/supertest
  */
 
-var test_globals = require('test-globals');
+var test_globals = require('../test-globals');
 var username = test_globals.username, password = test_globals.password, routes = test_globals.routes;
 
 describe('API Calls of system routes', function () {
@@ -21,16 +21,16 @@ describe('API Calls of system routes', function () {
         });
     })
 
-    describe('to stat URI', function () {
-        it('should return 401 unauthorized', function (done) {
-            routes.get('/stat')
-                .expect(401, done)
-        })
-
-        it('should auth and 200 authorized', function (done) {
-            routes.get('/stat')
-                .auth(username, password)
-                .expect(200, done)
-        })
-    })
+//    describe('to stat URI', function () {
+//        it('should return 401 unauthorized', function (done) {
+//            routes.get('/stat')
+//                .expect(401, done)
+//        })
+//
+//        it('should auth and 200 authorized', function (done) {
+//            routes.get('/stat')
+//                .auth(username, password)
+//                .expect(200, done)
+//        })
+//    })
 });
