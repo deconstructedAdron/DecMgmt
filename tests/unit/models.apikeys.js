@@ -23,8 +23,8 @@ describe('The business logic for API keys', function () {
         key_identifier.apikey.should.exist;
         key_identifier.email.should.exist;
     })
-//    it('should fail on generation if the email address is not valid.', function(){
-//        //Must have a valid email when generating an API key.
-//        var test = apikeys.generate(test_bad_email).should.throw();
-//    })
+    it('should fail on generation if the email address is not valid.', function(){
+        //Must have a valid email when generating an API key.
+        var test = apikeys.generate(test_bad_email).should.throw();
+    })
 })
