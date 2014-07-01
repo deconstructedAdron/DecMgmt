@@ -12,7 +12,7 @@ var apikeys = function apikeys(ring) {
 
 apikeys.ConnectionRing = {};
 
-apikeys.prototype.getUser = function (username, password) {
+apikeys.prototype.getUser = function (apikey) {
 
 }
 
@@ -21,10 +21,10 @@ apikeys.prototype.get = function (username, password) {
     return this.ConnectionRing.kv_get(collection, username);
 }
 
-apikeys.prototype.add = function (username, password) {
+apikeys.prototype.add = function (username, password, role) {
     var collection = this.ConnectionRing.collections.apikeys;
     var key = chance.guid();
-    var value = {apikey: chance.guid(), username: username};
+    var value = {apikey: chance.guid(), username: username, role: role};
 
     return this.ConnectionRing.kv_set(collection, key, value);
 }

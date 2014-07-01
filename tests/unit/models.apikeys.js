@@ -9,7 +9,6 @@ var data_ring = require('../../data/ring');
 describe('The business logic for API keys', function () {
     // Test variables
     var test_valid_email = 'someplace@blagh.com';
-    var test_bad_email = 'b@';
     var apikeys = new ApiKeys(data_ring);
 
     it('should exist when instantiated with a ring connection.', function () {
@@ -23,7 +22,9 @@ describe('The business logic for API keys', function () {
         key_identifier.apikey.should.exist;
         key_identifier.email.should.exist;
     })
+
     // I need to figure out how the hell to get this to work!!!!
+    //    var test_bad_email = 'b@';
     //    it('should fail on generation if the email address is not valid.', function(){
     //        assert.throws(apikeys.generate(test_bad_email), Error, "Must have a valid email when generating an API key.");
     //

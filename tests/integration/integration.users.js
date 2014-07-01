@@ -12,26 +12,6 @@ var roles = require('../../models/roles');
 var data_ring = require('../../data/ring');
 
 var users = new Users(data_ring);
-
-// ************* ************* ************* ************* ************* ************* ************* *************
-var user = {
-    username: 'batman',
-    password: 'batsecrets',
-    name: 'Bruce Wayne',
-    email: 'bruce@themanor.com',
-    roles: roles.List[0]  // This should be the Alfdir Role (god mode)
-}
-
-var apikey1 = {
-    apikey: 'eacabf10-4760-4ec1-b984-d0bbefa1d16f',
-    email: 'bruce@themanor.com'
-}
-
-var apikey2 = {
-    apikey: 'ed2e4db5-af64-435c-878d-7e00b341b160',
-    email: 'bruce@themanor.com'
-}
-
 var base_uri = '/users';
 
 describe('API Calls for users', function () {
