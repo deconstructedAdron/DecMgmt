@@ -9,11 +9,10 @@
  * Supertest: Located @ https://github.com/visionmedia/supertest
  */
 
-var should = require('chai').should();
-var test_globals = require('../tests-integration/integration-globals');
+var test_globals = require('../test-globals');
 var username = test_globals.username, password = test_globals.password, routes = test_globals.routes;
 
-describe('API Calls', function () {
+describe('API Calls of system routes', function () {
 
     describe('to Blitz.io URI', function () {
         it('should return a 200 success.', function (done) {

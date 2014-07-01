@@ -41,8 +41,6 @@ var roles = {
         readonly,
         writeonly,
         readwriteonly
-    ]
-};
-
+    ]};
 
 module.exports = roles;

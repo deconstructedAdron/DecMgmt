@@ -3,8 +3,6 @@
  * Description: The quick test and test framework check.
  */
 
-var should = require("should");
-
 describe('Testing frameworks', function () {
     var thingToTest = 'something';
     it('should work.', function () {

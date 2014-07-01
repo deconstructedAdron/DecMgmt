@@ -3,14 +3,11 @@
  *Description: basic tests for the roles DTO/Business Logic.
  */
 
-var Roles = require('../models/roles');
-var FAKE_RING = require('../tests/FAKE.data.ring');
-var should = require('should');
+var Roles = require('../../models/roles');
 
-describe('The roles', function () {
+describe('The business logic roles', function () {
     it('should have 5 different roles.', function () {
         var roles = Roles.List;
         roles.length.should.eql(5);
     });
 })
-
