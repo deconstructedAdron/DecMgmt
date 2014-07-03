@@ -13,7 +13,7 @@ var base_uri = '/apikeys';
 
 describe('API Calls for apikeys', function () {
 
-    it('should return a 200 success for listing by user', function (done) {
+    it('should return 200 for listing by user', function (done) {
         test_globals.routes.post(base_uri)
             .auth(username, password)
             .expect(200, done)
@@ -28,11 +28,12 @@ describe('API Calls for apikeys', function () {
             .auth(username, password)
             .expect(200, done)
     });
-    it('should return a 200 success after adding a key', function (done) {
+    it('should return 200 after adding a key', function (done) {
         test_globals.routes.post(base_uri + '/add')
             .auth(username, password)
             .expect(200, done)
     });
+
 
 //    it('should create an apikey', function (done){
 //        apikeys.add(test_globals.username, test_globals.password)
@@ -44,8 +45,17 @@ describe('API Calls for apikeys', function () {
 //                        done()
 //                    })
 //            })
-//
 //    })
+
+
+    it('should add the apikey and return the UUID/GUID of the newly created key', function () {
+        apikeys.add(test_globals.username, test_globals.password, role)
+            .then(function (result) {
+                var thing = result;
+
+                thing.should.exist;
+            })
+    })
 
     it('should return a 200 success after deleting a key', function (done) {
         test_globals.routes.post(base_uri + '/delete')

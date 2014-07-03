@@ -21,11 +21,11 @@ command would look something like this.
 
 Execute the app in one bash with the appropriate environment variables.
 
-    ` ORCHESTRATE_API_KEY=<key_goes_here> SYSTEM_URI=<usually_http://localhost:1337> node app.js
+    ` ORCHESTRATE_API_KEY=<key_goes_here> SYSTEM_URI=http://localhost:1337 node app.js
     
 Execute the tests in another bash with the appropriate environment variables.
     
-    ` ORCHESTRATE_API_KEY=<key_goes_here> SYSTEM_URI=<usually_http://localhost:1337> mocha tests/*
+    ` ORCHESTRATE_API_KEY=<key_goes_here> SYSTEM_URI=http://localhost:1337 mocha tests/*
 
 You're need an Orchestrate API Key in order to run any integration tests. The SYSTEM_URI reflects which system is running
 the tests. For the local dev solution that is set to http://localhost:1337, for the Codeship test server it is set to the
